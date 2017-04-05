@@ -1,0 +1,22 @@
+{
+  "name": "ddos_blog",
+  "version": "1.0.0",
+  "description": "New blog site for ddos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js"
+  },
+  "author": "daniel diaz",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.0.0",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.3.3"
+  }
+}
