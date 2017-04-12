@@ -4,34 +4,22 @@ const webpack = require('webpack');
 module.exports = {
     context: path.resolve(__dirname, './new_blog/client'),
     entry: {
-        app: './main.js'
+        app: './main.jsx'
     },
     output: {
         path: path.resolve(__dirname, './new_blog/static'),
-        filename: '[name].bundle.js'
+        filename: '[name].stuff.js'
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {NODE_ENV: '"production"'}
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            warnings: false
-        })
-    ],
     module: {
-        rules: [
-        {
-            test: /\.js$/,
-            exclude: [/node_modules/],
-            use: [{
+        loaders: [
+            {
+                test: /\.jsx?$/,
                 loader: 'babel-loader',
-                options: { presets: ['es2015', 'react'] }
-            }],
-            include: [
-                path.resolve(__dirname, './new_blog/client')
-            ]
-         }
+                exclude: /node_modules/,
+                query: {
+                    presets: ['react', 'es2015']
+                }
+            }
         ]
     }
 };
