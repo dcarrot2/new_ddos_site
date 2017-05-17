@@ -61,4 +61,5 @@ target/
 #Custom project ignores
 new_blog/static/app.bundle.js
 node_modules/
+new_blog/static
 

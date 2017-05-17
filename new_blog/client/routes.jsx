@@ -3,12 +3,17 @@ import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, Link, IndexRoute,
 browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers';
 import Home from './components/Home.jsx';
 
-const createStoreWithMW = applyMiddleware(thunk)(createStore);
-const store = createStoreWithMW(reducers);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+    reducers,
+    applyMiddleware(sagaMiddleware)
+);
+
+//TODO - pass in sagas
 
 class Routes extends React.Component {
 
