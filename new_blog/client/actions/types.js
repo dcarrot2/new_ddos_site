@@ -1,0 +1,4 @@
+// Blog types
+export const BLOG_POSTS_REQUEST = 'BLOG_POSTS_REQUEST';
+export const BLOG_POSTS_SUCCESS = 'BLOG_POSTS_SUCCESS';
+export const BLOG_POSTS_FAILURE = 'BLOG_POSTS_FAILURE';
